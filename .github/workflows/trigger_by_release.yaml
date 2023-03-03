@@ -1,0 +1,11 @@
+name: Trigger by release
+
+on:
+  release:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world!"
+      - run: This workflow was trigger by an auto-generated release.
