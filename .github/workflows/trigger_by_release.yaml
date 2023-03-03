@@ -1,7 +1,11 @@
 name: Trigger by release
 
 on:
-  release:
+  workflow_run:
+    workflows:
+      - Release
+    types:
+      - completed
 
 jobs:
   hello:
@@ -9,3 +13,4 @@ jobs:
     steps:
       - run: echo "Hello, world!"
       - run: This workflow was trigger by an auto-generated release.
+      - run: Status was ${{ github.event.workflow_run.conclusion }}
