@@ -25,3 +25,6 @@ jobs:
       - run: echo "pull_requests ${{ github.event.workflow_run.pull_requests }}"
       - run: echo "repository ${{ github.event.workflow_run.repository }}"
       - run: echo "url ${{ github.event.workflow_run.url }}"
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - run: echo "${GITHUB_REF/refs\/tags\//}"
