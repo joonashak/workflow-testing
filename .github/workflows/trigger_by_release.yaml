@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, world!"
-      - run: This workflow was trigger by an auto-generated release.
-      - run: Status was ${{ github.event.workflow_run.conclusion }}
+      - run: echo "This workflow was triggered by an auto-generated release."
+      - run: echo "Status was ${{ github.event.workflow_run.conclusion }}"
