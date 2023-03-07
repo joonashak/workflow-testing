@@ -16,4 +16,4 @@ jobs:
         if: ${{ steps.npm-publish.outputs.type != 'none' }}
         uses: softprops/action-gh-release@v0.1.15
         with:
-          tag_name: ${{ format('v{0}', '0.0.3') }}
+          tag_name: ${{ format('v{0}', '0.1.0') }}

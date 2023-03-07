@@ -9,6 +9,7 @@ on:
 
 jobs:
   hello:
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, world!"
@@ -33,3 +34,4 @@ jobs:
           # used sparingly with large repositories.
           fetch-depth: 0
       - run: git describe --tags --abbrev=0 ${{ github.event.workflow_run.head_sha }}
+      - run: echo "url from release workflow ${{ needs.release.outputs.url }}"
