@@ -1,0 +1,11 @@
+name: Trigger by push
+
+on: push
+
+jobs:
+  jee:
+    name: Jee
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "base_ref ${{ github.event.push.base_ref }}"
+      - run: echo "ref ${{ github.event.push.ref }}"
