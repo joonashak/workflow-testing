@@ -9,6 +9,6 @@ jobs:
     steps:
       - run: echo "base_ref ${{ github.event.push.base_ref }}"
       - run: echo "ref ${{ github.event.push.ref }}"
-      - run: echo "GITHUB_REF ${{ GITHUB_REF }}"
-      - run: echo "GITHUB_HEAD_REF ${{ GITHUB_HEAD_REF }}"
-      - run: echo "GITHUB_BASE_REF ${{ GITHUB_BASE_REF }}"
+      - run: echo "GITHUB_REF ${{ $GITHUB_REF }}"
+      - run: echo "GITHUB_HEAD_REF ${{ $GITHUB_HEAD_REF }}"
+      - run: echo "GITHUB_BASE_REF ${{ $GITHUB_BASE_REF }}"
