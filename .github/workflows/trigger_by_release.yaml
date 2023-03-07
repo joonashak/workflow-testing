@@ -28,5 +28,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
+          # Setting `fetch-depth = 0` is unfortunately the easiest way to checkout all tags
+          # along with the repo. However, it results in a full fetch, and as such should be
+          # used sparingly with large repositories.
           fetch-depth: 0
-      - run: git describe --tags ${{ github.event.workflow_run.head_sha }}
+      - run: git describe --tags --abbrev=0 ${{ github.event.workflow_run.head_sha }}
