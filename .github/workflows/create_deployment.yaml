@@ -13,8 +13,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: POST /repos/{owner}/{repo}/deployments
-          owner: ${{ github.event.repository.owner }}
-          repo: ${{ github.event.repository.name }}
+          owner: joonashak
+          repo: workflow-testing
           ref: asd
           environment: dev
       - uses: octokit/request-action@v2.1.7
