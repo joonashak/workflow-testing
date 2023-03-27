@@ -16,3 +16,5 @@ jobs:
           repo: workflow-testing
           ref: ${{ github.ref }}
           environment: dev
+          status: success
+          environment_url: https://github.com/joonashak/workflow-testing/pulls
