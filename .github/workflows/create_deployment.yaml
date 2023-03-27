@@ -13,8 +13,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           route: POST /repos/{owner}/{repo}/deployments
-          owner: joonashak
-          repo: workflow-testing
+          owner: ${{ github.event.repository.owner }}
+          repo: ${{ github.event.repository.name }}
           ref: asd
           environment: dev
       - uses: octokit/request-action@v2.1.7
@@ -29,3 +29,4 @@ jobs:
           environment: dev
           state: success
           environment_url: https://github.com/joonashak/workflow-testing/pulls
+      - run: echo ${{ GITHUB_REPOSITORY }}
