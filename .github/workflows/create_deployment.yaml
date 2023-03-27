@@ -8,6 +8,7 @@ jobs:
     permissions: write-all
     steps:
       - uses: octokit/request-action@v2.1.7
+        id: create-deployment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -15,15 +16,16 @@ jobs:
           owner: joonashak
           repo: workflow-testing
           ref: ${{ github.ref }}
-          environment: asd
+          environment: dev
       - uses: octokit/request-action@v2.1.7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          route: POST /repos/{owner}/{repo}/deployments
+          route: POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses
           owner: joonashak
           repo: workflow-testing
+          deployment_id: ${{ fromJson(steps.create-deployment.outputs.data).id }}
           ref: ${{ github.ref }}
-          environment: asd
+          environment: dev
           status: success
           environment_url: https://github.com/joonashak/workflow-testing/pulls
