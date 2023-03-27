@@ -27,5 +27,5 @@ jobs:
           deployment_id: ${{ fromJson(steps.create-deployment.outputs.data).id }}
           ref: ${{ github.ref }}
           environment: dev
-          status: success
+          state: success
           environment_url: https://github.com/joonashak/workflow-testing/pulls
