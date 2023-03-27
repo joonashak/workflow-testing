@@ -14,8 +14,8 @@ jobs:
           route: POST /repos/{owner}/{repo}/deployments
           owner: joonashak
           repo: workflow-testing
-          ref: ${{ github.ref_name }}
-          environment: dev
+          ref: ${{ github.ref }}
+          environment: asd
       - uses: octokit/request-action@v2.1.7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -23,7 +23,7 @@ jobs:
           route: POST /repos/{owner}/{repo}/deployments
           owner: joonashak
           repo: workflow-testing
-          ref: ${{ github.ref_name }}
-          environment: dev
+          ref: ${{ github.ref }}
+          environment: asd
           status: success
           environment_url: https://github.com/joonashak/workflow-testing/pulls
