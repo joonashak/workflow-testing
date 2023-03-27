@@ -6,7 +6,7 @@ on:
 jobs:
   asd:
     name: Triggering another workflow
-    uses: ./trigger_by_workflow.yaml
+    uses: ./.github/workflows/trigger_by_workflow.yaml
     with:
       fun: "a lot, please"
   release:
