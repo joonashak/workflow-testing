@@ -1,0 +1,15 @@
+name: Do something
+
+on:
+  workflow_call:
+    inputs:
+      fun:
+        description: Moi
+        type: string
+
+jobs:
+  asd:
+    name: Do things
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo ${{ inputs.fun }}
