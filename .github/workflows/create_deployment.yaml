@@ -29,4 +29,4 @@ jobs:
           environment: dev
           state: success
           environment_url: https://github.com/joonashak/workflow-testing/pulls
-      - run: echo ${{ GITHUB_REPOSITORY }}
+      - run: echo ${GITHUB_REPOSITORY}
