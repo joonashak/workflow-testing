@@ -1,6 +1,6 @@
 name: Create deployment
 
-on: pull_request
+on: push
 
 jobs:
   asd:
@@ -15,6 +15,7 @@ jobs:
           route: POST /repos/${{ github.repository }}/deployments
           ref: asd
           environment: dev
+      - run: echo ${{ fromJson(steps.create-deployment.outputs.data) }}
       - uses: octokit/request-action@v2.1.7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
